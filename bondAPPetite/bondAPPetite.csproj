@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\ConnectionDB.cs" />
+    <Compile Include="Entity\Categoria\CategoriaConsulta.cs" />
+    <Compile Include="Entity\Categoria\Categoria.cs" />
     <Compile Include="Entity\Producto\ProductoConsultas.cs" />
     <Compile Include="Entity\Producto\Producto.cs" />
     <Compile Include="Entity\Usuario.cs" />
@@ -109,6 +111,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProductosAdmin.resx">
       <DependentUpon>ProductosAdmin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>

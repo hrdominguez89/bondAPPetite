@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using bondAPPetite.Entity.Categoria;
 using bondAPPetite.Entity.Producto;
 
 namespace bondAPPetite.View
@@ -18,13 +19,22 @@ namespace bondAPPetite.View
 
         private List<Producto> mProductos;
         private ProductoConsultas mProductoConsultas;
+        private Producto mProducto;
 
         public ProductosAdmin()
         {
             InitializeComponent();
             mProductos = new List<Producto>();
             mProductoConsultas = new ProductoConsultas();
+            listarCategorias();
             cargarProductos();
+        }
+
+        private void listarCategorias()
+        {
+            comboCategoria.DataSource = new CategoriaConsulta().getCategorias();
+            comboCategoria.ValueMember = "id";
+            comboCategoria.DisplayMember = "descripcion";
         }
 
         private void cargarProductos(string filtro = "")
@@ -34,18 +44,18 @@ namespace bondAPPetite.View
             dgvProductos.Refresh();
             mProductos.Clear();
             mProductos = mProductoConsultas.getProductos(filtro);
-            
-            for(int i = 0; i < mProductos.Count; i++)
+
+            for (int i = 0; i < mProductos.Count; i++)
             {
                 dgvProductos.RowTemplate.Height = 50;
                 dgvProductos.Rows.Add(
                     mProductos[i].id,
-                    mProductos[i].cateogiria_id,
+                    mProductos[i].categoria_id,
                     mProductos[i].nombre,
                     mProductos[i].precio,
-                    mProductos[i].descripcion
-                    //Image.FromStream(new MemoryStream(mProductos[i].imagen))
-                    );
+                    mProductos[i].descripcion,
+                    mProductos[i].imagen != null ? Image.FromStream(new MemoryStream(mProductos[i].imagen)) : null
+                );
             }
         }
 
@@ -73,7 +83,7 @@ namespace bondAPPetite.View
 
             if (!float.TryParse(textPrecio.Text.Trim(), out float precio))
             {
-                MessageBox.Show("Ingrese el Precio");
+                MessageBox.Show("El formato indicado no es valido");
                 return false;
             }
 
@@ -89,20 +99,31 @@ namespace bondAPPetite.View
 
             cargarDatosProducto();
 
-            /*
+            
             if (mProductoConsultas.agregarProducto(mProducto))
             {
                 MessageBox.Show("Producto agregado");
                 cargarProductos();
-            }*/
+                limpiarCampos();
+            }
+        }
+
+        private void limpiarCampos()
+        {
+
+            textNombre.Text = "";
+            textPrecio.Text = "";
+            textDescripcion.Text = "";
         }
 
         private void cargarDatosProducto()
         {
-            /*mProducto.nombre = textNombre.Text.Trim();
+            mProducto = new Producto();
+            mProducto.categoria_id = (int)comboCategoria.SelectedValue;
+            mProducto.nombre = textNombre.Text.Trim();
             mProducto.precio = float.Parse(textPrecio.Text.Trim());
             mProducto.descripcion = textDescripcion.Text.Trim();
-            mProducto.imagen = ImageToByteArray(pictureBoxProducto.Image);*/
+            mProducto.imagen = ImageToByteArray(pbImagen.Image);
         }
 
         private byte[] ImageToByteArray(Image image)
@@ -137,6 +158,26 @@ namespace bondAPPetite.View
             {
                 pbImagen.Image = Image.FromFile(ofdSeleccionar.FileName);
             }
+
+        }
+
+        private void ProductosAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            cargarProductos(textBuscar.Text.Trim());
+        }
+
+        private void comboCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

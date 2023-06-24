@@ -12,7 +12,7 @@ namespace bondAPPetite.Entity.Producto
         public string nombre { get; set; }
         public float precio { get; set; }
         public string descripcion { get; set; }
-        public int cateogiria_id { get; set; }
-        //public byte[] imagen { get; set; }
+        public int categoria_id { get; set; }
+        public byte[] imagen { get; set; }
     }
 }

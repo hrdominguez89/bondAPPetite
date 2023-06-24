@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,6 +19,19 @@ namespace bondAPPetite.Entity.Producto
         public ProductoConsultas()
         {
             connectionDB = new ConnectionDB();
+        }
+
+        internal bool agregarProducto(Producto mProducto)
+        {
+            string q = "INSERT INTO Productos (nombre, descripcion, categoria_id,precio,imagen) VALUES (@nombre,@descripcion,@categoria_id,@precio,@imagen)";
+            SqlCommand sqlCommand = new SqlCommand(q, connectionDB.connectionSql);
+            sqlCommand.Parameters.AddWithValue("nombre", mProducto.nombre);
+            sqlCommand.Parameters.AddWithValue("descripcion", mProducto.descripcion);
+            sqlCommand.Parameters.AddWithValue("categoria_id", mProducto.categoria_id);
+            sqlCommand.Parameters.AddWithValue("precio", mProducto.precio);
+            sqlCommand.Parameters.AddWithValue("imagen", mProducto.imagen);
+            //Ejecuto la query
+            return sqlCommand.ExecuteNonQuery()>0;
         }
 
         internal List<Producto> getProductos(string filtro)
@@ -46,12 +60,12 @@ namespace bondAPPetite.Entity.Producto
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         Producto mProducto = new Producto();
-                        mProducto.id = int.Parse(dt.Rows[i][0].ToString());
-                        mProducto.nombre = dt.Rows[i][1].ToString();
-                        mProducto.descripcion = dt.Rows[i][2].ToString();
-                        mProducto.cateogiria_id = int.Parse(dt.Rows[i][3].ToString());
-                        mProducto.precio = float.Parse(dt.Rows[i][4].ToString());
-                        //mProducto.imagen = (byte[])mReader.GetValue(5);
+                        mProducto.id = int.Parse(dt.Rows[i]["id"].ToString());
+                        mProducto.nombre = dt.Rows[i]["nombre"].ToString();
+                        mProducto.descripcion = dt.Rows[i]["descripcion"].ToString();
+                        mProducto.categoria_id = int.Parse(dt.Rows[i]["categoria_id"].ToString());
+                        mProducto.precio = float.Parse(dt.Rows[i]["precio"].ToString());
+                        mProducto.imagen = (byte[])dt.Rows[i]["imagen"];
                         mProductos.Add(mProducto);
                     }
 
