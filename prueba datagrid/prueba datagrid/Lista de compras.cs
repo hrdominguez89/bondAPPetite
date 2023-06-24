@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Configuration;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.VisualBasic.Logging;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Net;
 
 
 namespace prueba_datagrid
@@ -17,6 +21,9 @@ namespace prueba_datagrid
     public partial class Lista_de_compras : Form
     {
         int i = 1;
+        int tipoDePago_id = 1;
+        SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=bondAPPetite;Integrated Security=True");
+
 
         public Lista_de_compras()
         {
@@ -44,11 +51,12 @@ namespace prueba_datagrid
         private void Lista_de_compras_Load(object sender, EventArgs e)
         {
 
-            //Llamamos al método para sumar el Total
+            //Llamamos al método para sumar el total de la lista
             Sumacolumna();
 
         }
 
+        //Método que suma el total de la lista de compras
         public void Sumacolumna()
         {
             decimal Total = 0;
@@ -63,12 +71,12 @@ namespace prueba_datagrid
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            string c,p;
+            string c, p;
             decimal v;
             c = txtcant.Text;
             p = "Milanesa";
             decimal cantidad = Convert.ToDecimal(c);
-            v = (cantidad*550);
+            v = (cantidad * 550);
             tbllista.Rows.Add(i + "", c, p, v);
             i = i + 1;
         }
@@ -81,7 +89,78 @@ namespace prueba_datagrid
         //boton de comprar
         private void button5_Click(object sender, EventArgs e)
         {
+            //Llamamos al método para sumar el total de la lista apretando el boton comprar
+
             Sumacolumna();
+        }
+
+        //botón ir al pago
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            SqlCommand Iralpago = new SqlCommand("Insert Into Ordenes values (@cliente_id, @fecha, @total, @tipoDePago_id, @estado_id)", con);
+            SqlCommand Iralpago2 = new SqlCommand("Insert Into Ordenes_Productos values (@orden_id, @producto_id, @cantidad)", con);
+            con.Open();
+
+            try
+            {
+                foreach (DataGridViewRow row in tbllista.Rows)
+                {
+                    Iralpago.Parameters.Clear();
+                    Iralpago.Parameters.AddWithValue("@cliente_id", 1);
+                    Iralpago.Parameters.AddWithValue("@fecha", DateTime.Now);
+                    Iralpago.Parameters.AddWithValue("@total", Convert.ToString("+labelsumar+"));
+                    Iralpago.Parameters.AddWithValue("@tipoDePago_id", 1);
+                    Iralpago.Parameters.AddWithValue("@estado_id", 1);
+                    Iralpago.Parameters.Clear();
+                    Iralpago2.Parameters.AddWithValue("@orden_id", 1);
+                    Iralpago2.Parameters.AddWithValue("@producto_id", 1);
+                    Iralpago2.Parameters.AddWithValue("@cantidad", Convert.ToString(row.Cells["Cantidad"].Value));
+
+                    Iralpago.ExecuteNonQuery();
+                    Iralpago2.ExecuteNonQuery();
+
+                    MessageBox.Show("Datos agregados");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void textBoxmedio_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBoxmedio.Text == "Efectivo")
+                {
+                    tipoDePago_id = 1;
+                }
+                else if (textBoxmedio.Text == "Tarjeta De Credito")
+                {
+                    tipoDePago_id = 2;
+                }
+                else if (textBoxmedio.Text == "Tarjeta De Debito")
+                {
+                    tipoDePago_id = 3;
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Ingrese un medio de pago valido: Efectivo,Tarjeta De Credito o Tarjeta De Debito");
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

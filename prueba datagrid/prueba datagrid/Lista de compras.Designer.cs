@@ -47,12 +47,14 @@
             label4 = new Label();
             txtcant = new TextBox();
             label3 = new Label();
+            textBoxmedio = new TextBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)tbllista).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(553, 65);
+            button1.Location = new Point(639, 58);
             button1.Name = "button1";
             button1.Size = new Size(114, 23);
             button1.TabIndex = 1;
@@ -61,7 +63,7 @@
             // 
             // btnborrarelemento
             // 
-            btnborrarelemento.Location = new Point(553, 108);
+            btnborrarelemento.Location = new Point(639, 96);
             btnborrarelemento.Name = "btnborrarelemento";
             btnborrarelemento.Size = new Size(114, 23);
             btnborrarelemento.TabIndex = 2;
@@ -71,16 +73,17 @@
             // 
             // button3
             // 
-            button3.Location = new Point(553, 152);
+            button3.Location = new Point(474, 393);
             button3.Name = "button3";
             button3.Size = new Size(114, 23);
             button3.TabIndex = 3;
             button3.Text = "Ir al pago";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
-            button4.Location = new Point(553, 199);
+            button4.Location = new Point(639, 138);
             button4.Name = "button4";
             button4.Size = new Size(114, 23);
             button4.TabIndex = 4;
@@ -95,7 +98,7 @@
             tbllista.Location = new Point(68, 152);
             tbllista.Name = "tbllista";
             tbllista.RowTemplate.Height = 25;
-            tbllista.Size = new Size(455, 150);
+            tbllista.Size = new Size(442, 150);
             tbllista.TabIndex = 5;
             tbllista.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -121,17 +124,17 @@
             // 
             // button5
             // 
-            button5.Location = new Point(338, 360);
+            button5.Location = new Point(241, 360);
             button5.Name = "button5";
-            button5.Size = new Size(75, 23);
+            button5.Size = new Size(155, 23);
             button5.TabIndex = 6;
-            button5.Text = "Comprar";
+            button5.Text = "Finalizar lista de compra";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
             // button6
             // 
-            button6.Location = new Point(553, 250);
+            button6.Location = new Point(639, 186);
             button6.Name = "button6";
             button6.Size = new Size(114, 23);
             button6.TabIndex = 7;
@@ -167,7 +170,7 @@
             // 
             // btnadd
             // 
-            btnadd.Location = new Point(553, 24);
+            btnadd.Location = new Point(452, 24);
             btnadd.Name = "btnadd";
             btnadd.Size = new Size(114, 23);
             btnadd.TabIndex = 20;
@@ -199,21 +202,42 @@
             txtcant.Name = "txtcant";
             txtcant.Size = new Size(47, 23);
             txtcant.TabIndex = 15;
+            txtcant.Text = "3";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(62, 28);
+            label3.Location = new Point(62, 32);
             label3.Name = "label3";
             label3.Size = new Size(35, 15);
             label3.TabIndex = 14;
             label3.Text = "Cant:";
+            label3.Click += label3_Click;
+            // 
+            // textBoxmedio
+            // 
+            textBoxmedio.Location = new Point(214, 393);
+            textBoxmedio.Name = "textBoxmedio";
+            textBoxmedio.Size = new Size(236, 23);
+            textBoxmedio.TabIndex = 23;
+            textBoxmedio.TextChanged += textBoxmedio_TextChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(62, 396);
+            label2.Name = "label2";
+            label2.Size = new Size(146, 15);
+            label2.TabIndex = 22;
+            label2.Text = "Ingrese su medio de pago:";
             // 
             // Lista_de_compras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBoxmedio);
+            Controls.Add(label2);
             Controls.Add(btnadd);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -257,5 +281,7 @@
         private Label label4;
         private TextBox txtcant;
         private Label label3;
+        private TextBox textBoxmedio;
+        private Label label2;
     }
 }
