@@ -52,8 +52,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\ConnectionDB.cs" />
+    <Compile Include="Entity\Producto\ProductoConsultas.cs" />
+    <Compile Include="Entity\Producto\Producto.cs" />
     <Compile Include="Entity\Usuario.cs" />
     <Compile Include="Entity\Roles.cs" />
+    <Compile Include="View\ProductosAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProductosAdmin.Designer.cs">
+      <DependentUpon>ProductosAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MenuCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,8 +101,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\MenuAdmin.resx">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MenuCliente.resx">
       <DependentUpon>MenuCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProductosAdmin.resx">
+      <DependentUpon>ProductosAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
@@ -194,6 +214,8 @@
   <ItemGroup>
     <None Include="Resources\postre oreo.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Entity\Usuario\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

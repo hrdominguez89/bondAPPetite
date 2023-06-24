@@ -9,7 +9,7 @@ namespace bondAPPetite.Entity
 
     public enum Roles
     {
-        Admin = 1,
-        Cliente = 2,
+        Cliente = 1,
+        Admin = 2,
     }
 }

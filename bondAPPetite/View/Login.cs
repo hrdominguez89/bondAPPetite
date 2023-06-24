@@ -14,6 +14,7 @@ using bondAPPetite;
 using bondAPPetite.DAL;
 using bondAPPetite.View;
 using bondAPPetite.Entity;
+using Microsoft.Win32;
 
 
 
@@ -52,14 +53,18 @@ namespace bondAPPetite.View
                     if (dt.Rows[0][1].ToString() == "1")
                     {
                         //new UsuarioAdmin(dt.Rows[0][0].ToString()).Show();
+                       MenuCliente menuCliente = new MenuCliente(new Usuario(dt.Rows[0][2].ToString(), dt.Rows[0][0].ToString(), Roles.Cliente));
+                        menuCliente.Show();
+                        menuCliente.StartPosition = FormStartPosition.Manual;
+                        menuCliente.Location = this.Location;
+                        menuCliente.Show();
                     }
 
-                    else if (dt.Rows[0][1].ToString() == "2")
+                    else if (dt.Rows[0][1].ToString() == "2")//
                     {
-                        MessageBox.Show("Entreeee");
-                        new MenuCliente(new Usuario(dt.Rows[0][2].ToString(), dt.Rows[0][0].ToString(), Roles.Admin)).Show();
-
+                        new MenuAdmin(new Usuario(dt.Rows[0][2].ToString(), dt.Rows[0][0].ToString(), Roles.Admin)).Show();
                     }
+
                 }
                 else
                 {
