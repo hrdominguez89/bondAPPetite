@@ -146,6 +146,23 @@ namespace bondAPPetite.View
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridViewRow fila = dgvProductos.Rows[e.RowIndex];
+            textNombre.Text = Convert.ToString(fila.Cells["id"].Value);
+            textPrecio.Text = Convert.ToString(fila.Cells["precio"].Value);
+            textDescripcion.Text = Convert.ToString(fila.Cells["descripcion"].Value);
+
+
+            MemoryStream memoryStream = new MemoryStream();
+
+            Bitmap bitmap = (Bitmap)dgvProductos.CurrentRow.Cells["imagen"].Value;
+            bitmap.Save(memoryStream, ImageFormat.Png);
+            pbImagen.Image = Image.FromStream(memoryStream);
+
+            int categoriaId;
+            if (int.TryParse(Convert.ToString(fila.Cells["categoria"].Value), out categoriaId))
+            {
+                comboCategoria.SelectedValue = categoriaId;
+            }
 
         }
 
@@ -192,6 +209,11 @@ namespace bondAPPetite.View
             
 
 
+        }
+
+        private void textBuscar_TextChanged(object sender, EventArgs e)
+        {
+            cargarProductos(textBuscar.Text.Trim());
         }
     }
 }

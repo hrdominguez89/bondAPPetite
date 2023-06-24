@@ -42,10 +42,9 @@ namespace bondAPPetite.Entity.Producto
                 
                 if(filtro != "")
                 {
-                    q += "WHERE " +
+                    q += " WHERE " +
                         "id LIKE '%" + filtro + "%' OR " +
                         "nombre LIKE '%" + filtro + "%' OR " +
-                        "precio LIKE '%" + filtro + "%' OR " +
                         "descripcion LIKE '%" + filtro + "%';";
                 }
                 connectionDB.abrir();
