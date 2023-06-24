@@ -120,5 +120,24 @@ namespace bondAPPetite.View
         {
 
         }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofdSeleccionar= new OpenFileDialog();
+            ofdSeleccionar.Filter = "Imagenes|*.jpg; *.png";
+            ofdSeleccionar.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            ofdSeleccionar.Title = "seleccionar imagen";
+
+            if(ofdSeleccionar.ShowDialog() == DialogResult.OK) 
+            {
+                pbImagen.Image = Image.FromFile(ofdSeleccionar.FileName);
+            }
+
+        }
     }
 }
