@@ -49,6 +49,7 @@
             label3 = new Label();
             textBoxmedio = new TextBox();
             label2 = new Label();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)tbllista).BeginInit();
             SuspendLayout();
             // 
@@ -202,7 +203,6 @@
             txtcant.Name = "txtcant";
             txtcant.Size = new Size(47, 23);
             txtcant.TabIndex = 15;
-            txtcant.Text = "3";
             // 
             // label3
             // 
@@ -231,11 +231,22 @@
             label2.TabIndex = 22;
             label2.Text = "Ingrese su medio de pago:";
             // 
+            // button2
+            // 
+            button2.Location = new Point(640, 242);
+            button2.Name = "button2";
+            button2.Size = new Size(113, 23);
+            button2.TabIndex = 24;
+            button2.Text = "imprimir";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Lista_de_compras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(textBoxmedio);
             Controls.Add(label2);
             Controls.Add(btnadd);
@@ -283,5 +294,6 @@
         private Label label3;
         private TextBox textBoxmedio;
         private Label label2;
+        private Button button2;
     }
 }

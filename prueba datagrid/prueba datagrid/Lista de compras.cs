@@ -97,19 +97,19 @@ namespace prueba_datagrid
         //botón ir al pago
         private void button3_Click(object sender, EventArgs e)
         {
-
             SqlCommand Iralpago = new SqlCommand("Insert Into Ordenes values (@cliente_id, @fecha, @total, @tipoDePago_id, @estado_id)", con);
             SqlCommand Iralpago2 = new SqlCommand("Insert Into Ordenes_Productos values (@orden_id, @producto_id, @cantidad)", con);
             con.Open();
-
+            float total = Convert.ToSingle(labelsumar.Text);
+            int cliente = 1;
             try
             {
                 foreach (DataGridViewRow row in tbllista.Rows)
                 {
                     Iralpago.Parameters.Clear();
-                    Iralpago.Parameters.AddWithValue("@cliente_id", 1);
+                    Iralpago.Parameters.AddWithValue("@cliente_id", cliente);
                     Iralpago.Parameters.AddWithValue("@fecha", DateTime.Now);
-                    Iralpago.Parameters.AddWithValue("@total", Convert.ToString("+labelsumar+"));
+                    Iralpago.Parameters.AddWithValue("@total", total);
                     Iralpago.Parameters.AddWithValue("@tipoDePago_id", 1);
                     Iralpago.Parameters.AddWithValue("@estado_id", 1);
                     Iralpago.Parameters.Clear();
@@ -122,7 +122,6 @@ namespace prueba_datagrid
 
                     MessageBox.Show("Datos agregados");
                 }
-
             }
             catch (Exception ex)
             {
@@ -160,6 +159,25 @@ namespace prueba_datagrid
 
         private void label3_Click(object sender, EventArgs e)
         {
+
+        }
+
+        //Botón ir a factura
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string sqlfactura = @"SELECT
+            Ordenes_Productos.cantidad,
+            Productos.nombre,
+            Productos.descripcion,
+            Productos.precio,
+            Ordenes.total,
+            Ordenes.fecha
+            FROM Ordenes
+            INNER JOIN Ordenes_Productos
+            ON Ordenes.id = Ordenes_Productos.orden_id
+            INNER JOIN Productos
+            ON Ordenes_Productos.producto_id = Productos.id 
+            WHERE Ordenes.id = Ordenes_Productos.orden_id AND Ordenes_Productos.producto_id = Productos.id";
 
         }
     }
