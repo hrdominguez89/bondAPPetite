@@ -52,12 +52,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\ConnectionDB.cs" />
+    <Compile Include="Entity\Carrito\Carrito.cs" />
+    <Compile Include="Entity\Carrito\CarritoConsulta.cs" />
     <Compile Include="Entity\Categoria\CategoriaConsulta.cs" />
     <Compile Include="Entity\Categoria\Categoria.cs" />
     <Compile Include="Entity\Producto\ProductoConsultas.cs" />
     <Compile Include="Entity\Producto\Producto.cs" />
     <Compile Include="Entity\Usuario.cs" />
     <Compile Include="Entity\Roles.cs" />
+    <Compile Include="View\ProductoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProductoCliente.Designer.cs">
+      <DependentUpon>ProductoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\RegistrarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +104,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\ProductoCliente.resx">
+      <DependentUpon>ProductoCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\RegistrarUsuario.resx">
       <DependentUpon>RegistrarUsuario.cs</DependentUpon>
     </EmbeddedResource>

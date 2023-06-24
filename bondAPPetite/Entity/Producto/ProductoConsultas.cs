@@ -77,5 +77,65 @@ namespace bondAPPetite.Entity.Producto
 
             return mProductos;
         }
+
+        internal List<Producto> getProductosByCategoria(string filtro,int categoria_id)
+        {
+            string q = "SELECT * FROM Productos";
+            try
+            {
+                q += " WHERE " +
+                        "categoria_id = " + categoria_id;
+                if (filtro != "")
+                {
+                    q += " AND " +
+                        "(id LIKE '%" + filtro + "%' OR " +
+                        "nombre LIKE '%" + filtro + "%' OR " +
+                        "descripcion LIKE '%" + filtro + "%');";
+                }
+                connectionDB.abrir();
+                SqlCommand sqlCommand = new SqlCommand(q, connectionDB.connectionSql);
+                SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                if (dt.Rows.Count >= 1)
+                {
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        Producto mProducto = new Producto();
+                        mProducto.id = int.Parse(dt.Rows[i]["id"].ToString());
+                        mProducto.nombre = dt.Rows[i]["nombre"].ToString();
+                        mProducto.descripcion = dt.Rows[i]["descripcion"].ToString();
+                        mProducto.categoria_id = int.Parse(dt.Rows[i]["categoria_id"].ToString());
+                        mProducto.precio = float.Parse(dt.Rows[i]["precio"].ToString());
+                        mProducto.imagen = (byte[])dt.Rows[i]["imagen"];
+                        mProductos.Add(mProducto);
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return mProductos;
+        }
+
+        internal bool modificarProducto(Producto mProducto)
+        {
+            string q = "UPDATE Productos SET nombre = @nombre, descripcion= @descripcion, categoria_id = @categoria_id,precio = @precio,imagen = @imagen WHERE id = @id;";
+            SqlCommand sqlCommand = new SqlCommand(q, connectionDB.connectionSql);
+            sqlCommand.Parameters.AddWithValue("nombre", mProducto.nombre);
+            sqlCommand.Parameters.AddWithValue("descripcion", mProducto.descripcion);
+            sqlCommand.Parameters.AddWithValue("categoria_id", mProducto.categoria_id);
+            sqlCommand.Parameters.AddWithValue("precio", mProducto.precio);
+            sqlCommand.Parameters.AddWithValue("imagen", mProducto.imagen);
+            sqlCommand.Parameters.AddWithValue("id", mProducto.id);
+
+            //Ejecuto la query
+            return sqlCommand.ExecuteNonQuery() > 0;
+        }
     }
 }

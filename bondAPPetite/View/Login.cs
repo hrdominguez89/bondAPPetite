@@ -38,7 +38,7 @@ namespace bondAPPetite.View
                 //Abro conexión
                 this.con.abrir();
                 //escribo la consulta
-                SqlCommand cmd = new SqlCommand("Select top(1) email, rol_id,nombre FROM Usuario WHERE email = @email and password = @password", this.con.connectionSql);
+                SqlCommand cmd = new SqlCommand("Select top(1) email, rol_id,nombre,id FROM Usuario WHERE email = @email and password = @password", this.con.connectionSql);
                 //Agrrego los parametros de busqueda
                 cmd.Parameters.AddWithValue("email", email);
                 cmd.Parameters.AddWithValue("password", password);
@@ -53,7 +53,9 @@ namespace bondAPPetite.View
                     if (dt.Rows[0][1].ToString() == "1")
                     {
                         //new UsuarioAdmin(dt.Rows[0][0].ToString()).Show();
-                       MenuCliente menuCliente = new MenuCliente(new Usuario(dt.Rows[0][2].ToString(), dt.Rows[0][0].ToString(), Roles.Cliente));
+                        Usuario usuario = new Usuario(dt.Rows[0][2].ToString(), dt.Rows[0][0].ToString(), Roles.Cliente);
+                        usuario.id = int.Parse(dt.Rows[0]["id"].ToString());
+                        MenuCliente menuCliente = new MenuCliente(usuario);
                         menuCliente.Show();
                         menuCliente.StartPosition = FormStartPosition.Manual;
                         menuCliente.Location = this.Location;
@@ -62,7 +64,9 @@ namespace bondAPPetite.View
 
                     else if (dt.Rows[0][1].ToString() == "2")//
                     {
-                        new MenuAdmin(new Usuario(dt.Rows[0][2].ToString(), dt.Rows[0][0].ToString(), Roles.Admin)).Show();
+                        Usuario usuario = new Usuario(dt.Rows[0][2].ToString(), dt.Rows[0][0].ToString(), Roles.Admin);
+                        usuario.id = int.Parse(dt.Rows[0]["id"].ToString());
+                        new MenuAdmin(usuario).Show();
                     }
 
                 }

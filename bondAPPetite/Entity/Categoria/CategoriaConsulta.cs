@@ -15,6 +15,8 @@ namespace bondAPPetite.Entity.Categoria
 
         private List<Categoria> mCategorias = new List<Categoria>();
 
+        private Categoria mCategoria = new Categoria();
+
         public CategoriaConsulta()
         {
             connectionDB = new ConnectionDB();
@@ -50,6 +52,31 @@ namespace bondAPPetite.Entity.Categoria
             }
 
             return mCategorias;
+        }
+
+        internal Categoria getCategoriaById(int categoria_id)
+        {
+            string q = "SELECT * FROM Categoria where id = "+ categoria_id;
+            try
+            {
+                connectionDB.abrir();
+                SqlCommand sqlCommand = new SqlCommand(q, connectionDB.connectionSql);
+                SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                if (dt.Rows.Count >= 1)
+                {
+                        this.mCategoria.id = int.Parse(dt.Rows[0]["id"].ToString());
+                        this.mCategoria.descripcion = dt.Rows[0]["descripcion"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hubo un error: " + ex.Message);
+            }
+
+            return this.mCategoria;
         }
     }
 }

@@ -49,10 +49,12 @@ namespace bondAPPetite.View
             this.Imagen = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.ofdSeleccionar = new System.Windows.Forms.OpenFileDialog();
-            this.pbImagen = new System.Windows.Forms.PictureBox();
             this.textBuscar = new System.Windows.Forms.TextBox();
             this.labelBuscar = new System.Windows.Forms.Label();
             this.buttonModificar = new System.Windows.Forms.Button();
+            this.textId = new System.Windows.Forms.TextBox();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
+            this.pbImagen = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +69,7 @@ namespace bondAPPetite.View
             this.labelNombre.Size = new System.Drawing.Size(76, 20);
             this.labelNombre.TabIndex = 11;
             this.labelNombre.Text = "Nombre:";
+            this.labelNombre.Click += new System.EventHandler(this.labelNombre_Click);
             // 
             // labelPrecio
             // 
@@ -78,6 +81,7 @@ namespace bondAPPetite.View
             this.labelPrecio.Size = new System.Drawing.Size(64, 20);
             this.labelPrecio.TabIndex = 13;
             this.labelPrecio.Text = "Precio:";
+            this.labelPrecio.Click += new System.EventHandler(this.labelPrecio_Click);
             // 
             // labelDescripcion
             // 
@@ -89,6 +93,7 @@ namespace bondAPPetite.View
             this.labelDescripcion.Size = new System.Drawing.Size(108, 20);
             this.labelDescripcion.TabIndex = 15;
             this.labelDescripcion.Text = "Descripción:";
+            this.labelDescripcion.Click += new System.EventHandler(this.labelDescripcion_Click);
             // 
             // comboCategoria
             // 
@@ -110,6 +115,7 @@ namespace bondAPPetite.View
             this.labelCategoria.Size = new System.Drawing.Size(92, 20);
             this.labelCategoria.TabIndex = 17;
             this.labelCategoria.Text = "Categoria:";
+            this.labelCategoria.Click += new System.EventHandler(this.labelCategoria_Click);
             // 
             // textDescripcion
             // 
@@ -118,6 +124,7 @@ namespace bondAPPetite.View
             this.textDescripcion.Size = new System.Drawing.Size(306, 96);
             this.textDescripcion.TabIndex = 18;
             this.textDescripcion.Text = "";
+            this.textDescripcion.TextChanged += new System.EventHandler(this.textDescripcion_TextChanged);
             // 
             // textNombre
             // 
@@ -125,6 +132,7 @@ namespace bondAPPetite.View
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(212, 20);
             this.textNombre.TabIndex = 19;
+            this.textNombre.TextChanged += new System.EventHandler(this.textNombre_TextChanged);
             // 
             // textPrecio
             // 
@@ -132,6 +140,7 @@ namespace bondAPPetite.View
             this.textPrecio.Name = "textPrecio";
             this.textPrecio.Size = new System.Drawing.Size(212, 20);
             this.textPrecio.TabIndex = 20;
+            this.textPrecio.TextChanged += new System.EventHandler(this.textPrecio_TextChanged);
             // 
             // buttonCargar
             // 
@@ -236,16 +245,6 @@ namespace bondAPPetite.View
             // 
             this.ofdSeleccionar.FileName = "openFileDialog1";
             // 
-            // pbImagen
-            // 
-            this.pbImagen.Location = new System.Drawing.Point(358, 49);
-            this.pbImagen.Margin = new System.Windows.Forms.Padding(2);
-            this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(209, 203);
-            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImagen.TabIndex = 26;
-            this.pbImagen.TabStop = false;
-            // 
             // textBuscar
             // 
             this.textBuscar.Location = new System.Drawing.Point(94, 315);
@@ -277,6 +276,39 @@ namespace bondAPPetite.View
             this.buttonModificar.TabIndex = 29;
             this.buttonModificar.Text = "Modificar";
             this.buttonModificar.UseVisualStyleBackColor = false;
+            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
+            // 
+            // textId
+            // 
+            this.textId.Location = new System.Drawing.Point(197, 205);
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(14, 20);
+            this.textId.TabIndex = 30;
+            this.textId.TextChanged += new System.EventHandler(this.textId_TextChanged);
+            // 
+            // buttonLimpiar
+            // 
+            this.buttonLimpiar.BackColor = System.Drawing.Color.MediumPurple;
+            this.buttonLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLimpiar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonLimpiar.Location = new System.Drawing.Point(388, 550);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(92, 28);
+            this.buttonLimpiar.TabIndex = 31;
+            this.buttonLimpiar.Text = "Limpiar";
+            this.buttonLimpiar.UseVisualStyleBackColor = false;
+            this.buttonLimpiar.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // pbImagen
+            // 
+            this.pbImagen.Location = new System.Drawing.Point(358, 49);
+            this.pbImagen.Margin = new System.Windows.Forms.Padding(2);
+            this.pbImagen.Name = "pbImagen";
+            this.pbImagen.Size = new System.Drawing.Size(209, 203);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagen.TabIndex = 26;
+            this.pbImagen.TabStop = false;
+            this.pbImagen.Click += new System.EventHandler(this.pbImagen_Click);
             // 
             // ProductosAdmin
             // 
@@ -284,6 +316,7 @@ namespace bondAPPetite.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(593, 590);
+            this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.labelBuscar);
             this.Controls.Add(this.textBuscar);
@@ -300,6 +333,7 @@ namespace bondAPPetite.View
             this.Controls.Add(this.labelDescripcion);
             this.Controls.Add(this.labelPrecio);
             this.Controls.Add(this.labelNombre);
+            this.Controls.Add(this.textId);
             this.Name = "ProductosAdmin";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ProductosAdmin_Load);
@@ -335,5 +369,7 @@ namespace bondAPPetite.View
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewImageColumn Imagen;
         private System.Windows.Forms.Button buttonModificar;
+        private System.Windows.Forms.TextBox textId;
+        private System.Windows.Forms.Button buttonLimpiar;
     }
 }

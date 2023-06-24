@@ -121,11 +121,25 @@ namespace bondAPPetite.View
         private void cargarDatosProducto()
         {
             mProducto = new Producto();
+            mProducto.id = getIdIfExist();
             mProducto.categoria_id = (int)comboCategoria.SelectedValue;
             mProducto.nombre = textNombre.Text.Trim();
             mProducto.precio = float.Parse(textPrecio.Text.Trim());
             mProducto.descripcion = textDescripcion.Text.Trim();
             mProducto.imagen = ImageToByteArray(pbImagen.Image);
+        }
+
+        private int getIdIfExist()
+        {
+            if (!textId.Text.Trim().Equals(""))
+            {
+                if(int.TryParse(textId.Text.Trim(), out int id))
+                {
+                    return id;
+                }
+
+            }
+            return -1;
         }
 
         private byte[] ImageToByteArray(Image image)
@@ -147,7 +161,8 @@ namespace bondAPPetite.View
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow fila = dgvProductos.Rows[e.RowIndex];
-            textNombre.Text = Convert.ToString(fila.Cells["id"].Value);
+            textId.Text = Convert.ToString(fila.Cells["id"].Value);
+            textNombre.Text = Convert.ToString(fila.Cells["nombre"].Value);
             textPrecio.Text = Convert.ToString(fila.Cells["precio"].Value);
             textDescripcion.Text = Convert.ToString(fila.Cells["descripcion"].Value);
 
@@ -214,6 +229,74 @@ namespace bondAPPetite.View
         private void textBuscar_TextChanged(object sender, EventArgs e)
         {
             cargarProductos(textBuscar.Text.Trim());
+        }
+
+        private void buttonModificar_Click(object sender, EventArgs e)
+        {
+            if (!datosCorrectos())
+            {
+                return;
+            }
+
+            cargarDatosProducto();
+
+
+            if (mProductoConsultas.modificarProducto(mProducto))
+            {
+                MessageBox.Show("Producto modificado");
+                cargarProductos();
+                limpiarCampos();
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            limpiarCampos();
+        }
+
+        private void textPrecio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCategoria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelDescripcion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPrecio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbImagen_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

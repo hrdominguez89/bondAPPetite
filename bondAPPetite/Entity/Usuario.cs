@@ -17,6 +17,7 @@ namespace bondAPPetite.Entity
         public string telefono { get; set; }
         public string dni { get; set; }
         public Roles rol_id { get; set; }
+        public int id { get; set; }
 
 
         public Usuario(string nombre, string email, Roles rol_id)
