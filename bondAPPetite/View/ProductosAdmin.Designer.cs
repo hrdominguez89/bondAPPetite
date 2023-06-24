@@ -48,6 +48,7 @@
             this.ofdSeleccionar = new System.Windows.Forms.OpenFileDialog();
             this.pbImagen = new System.Windows.Forms.PictureBox();
             this.Imagen = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
@@ -219,7 +220,7 @@
             this.btnSeleccionar.BackColor = System.Drawing.Color.MediumPurple;
             this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSeleccionar.Location = new System.Drawing.Point(636, 331);
+            this.btnSeleccionar.Location = new System.Drawing.Point(478, 336);
             this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(4);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(122, 34);
@@ -248,12 +249,27 @@
             this.Imagen.Name = "Imagen";
             this.Imagen.Width = 125;
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGuardar.Location = new System.Drawing.Point(636, 336);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(122, 34);
+            this.btnGuardar.TabIndex = 27;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // ProductosAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(791, 726);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dgvProductos);
@@ -298,5 +314,6 @@
         private System.Windows.Forms.OpenFileDialog ofdSeleccionar;
         private System.Windows.Forms.PictureBox pbImagen;
         private System.Windows.Forms.DataGridViewImageColumn Imagen;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }
