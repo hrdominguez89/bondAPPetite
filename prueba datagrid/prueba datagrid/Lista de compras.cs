@@ -14,6 +14,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Microsoft.VisualBasic.Logging;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Net;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using System.IO;
+
 
 
 namespace prueba_datagrid
@@ -162,23 +167,35 @@ namespace prueba_datagrid
 
         }
 
-        //Botón ir a factura
+        //Botón imprimir 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sqlfactura = @"SELECT
-            Ordenes_Productos.cantidad,
-            Productos.nombre,
-            Productos.descripcion,
-            Productos.precio,
-            Ordenes.total,
-            Ordenes.fecha
-            FROM Ordenes
-            INNER JOIN Ordenes_Productos
-            ON Ordenes.id = Ordenes_Productos.orden_id
-            INNER JOIN Productos
-            ON Ordenes_Productos.producto_id = Productos.id 
-            WHERE Ordenes.id = Ordenes_Productos.orden_id AND Ordenes_Productos.producto_id = Productos.id";
+            SaveFileDialog guardar = new SaveFileDialog();
+            guardar.FileName = "Factura.pdf ";
+            guardar.ShowDialog();
 
+            string paginahtml_texto = Properties.Resources.Facturapdf.ToString();
+
+            if (guardar.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
+                {
+                    Document pdfdoc = new Document(PageSize.A4, 25, 25, 25, 25);
+                    //lo guarda en un archivo de memoria (stream)
+                    PdfWriter writer = PdfWriter.GetInstance(pdfdoc,stream);
+                    pdfdoc.Open();
+                    pdfdoc.Add(new Phrase(""));
+                    //para que pueda leer el html e insertar en el pdf
+                    using (StringReader sr = new StringReader(paginahtml_texto))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer,pdfdoc,sr);
+
+                    }
+
+                    pdfdoc.Close();
+                    stream.Close();
+                }
+            }
         }
     }
 }
