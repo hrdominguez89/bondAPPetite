@@ -32,9 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblmensaje = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -46,7 +46,7 @@
             this.button1.BackColor = System.Drawing.Color.MediumPurple;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.button1.Location = new System.Drawing.Point(396, 195);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(228, 59);
             this.button1.TabIndex = 13;
@@ -88,6 +88,16 @@
             this.panel1.Size = new System.Drawing.Size(342, 672);
             this.panel1.TabIndex = 16;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::bondAPPetite.Properties.Resources.images;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 108);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(320, 306);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblmensaje
             // 
             this.lblmensaje.AutoSize = true;
@@ -111,16 +121,6 @@
             this.label2.Size = new System.Drawing.Size(231, 39);
             this.label2.TabIndex = 0;
             this.label2.Text = "Bond Appetite";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::bondAPPetite.Properties.Resources.images;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 108);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(320, 306);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // button2
             // 
@@ -146,6 +146,7 @@
             this.button3.TabIndex = 18;
             this.button3.Text = "Usuarios";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // MenuAdmin
             // 
@@ -158,7 +159,7 @@
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuAdmin";
             this.RightToLeftLayout = true;
             this.Text = "MenuAdmin";

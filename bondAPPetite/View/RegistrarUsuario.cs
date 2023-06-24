@@ -1,5 +1,6 @@
 ﻿using bondAPPetite.DAL;
 using bondAPPetite.Entity;
+using bondAPPetite.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,32 +12,78 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace bondAPPetite.View
+namespace bondAPPetite
 {
-    public partial class Register : Form
+    public partial class RegistroUsuario : Form
     {
-
         private ConnectionDB con = new ConnectionDB();
 
-        public Register()
+        public RegistroUsuario()
         {
             InitializeComponent();
         }
 
-        //Boton login
-        private void button2_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Login().Show();
+
         }
 
-        //Boton registrar
+        private void textBoxDni_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            this.registerUser(this.textBoxNombre.Text, this.textBoxEmail.Text, this.textBoxPassword.Text, this.textBoxTelefono.Text, this.textBoxDni.Text,Roles.Cliente);
+            this.registroUsuario(this.textBoxNombre.Text, this.textBoxEmail.Text, this.textBoxPassword.Text, this.textBoxTelefono.Text, this.textBoxDni.Text, Roles.Admin);
         }
 
-        public void registerUser(string nombre,string email,string password, string telefono, string dni, Roles rol_id)
+        public void registroUsuario(string nombre, string email, string password, string telefono, string dni, Roles rol_id)
         {
             try
             {
@@ -51,15 +98,15 @@ namespace bondAPPetite.View
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
 
-                if (dt.Rows.Count == 1)
+                if (dt.Rows.Count == 2)
                 {
                     //si existe cuenta arrojo exception 
                     throw new Exception("Su cuenta ya se encuentra registrada");
                 }
 
-                Usuario usuario = new Usuario(nombre,email,rol_id);
+                Usuario usuario = new Usuario(nombre, email, rol_id);
 
-               //Genero query para insert usuario
+                //Genero query para insert usuario
                 cmd = new SqlCommand("INSERT INTO Usuario (nombre,email,password,rol_id,fechaDeRegistro,activo,telefono,dni) VALUES (@nombre,@email,@password,@rol_id,@fechaDeRegistro,@activo,@telefono,@dni)", this.con.connectionSql);
                 //Agrego parametros
                 cmd.Parameters.AddWithValue("nombre", usuario.nombre);
@@ -77,18 +124,13 @@ namespace bondAPPetite.View
                 this.Hide();
                 new Login().Show();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show("Hubo un error al registrar: " + e.Message);
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Register_Load(object sender, EventArgs e)
+        private void RegistroUsuario_Load(object sender, EventArgs e)
         {
 
         }

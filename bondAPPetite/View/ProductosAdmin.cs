@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -10,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using bondAPPetite.Entity.Categoria;
+using bondAPPetite.DAL;
 using bondAPPetite.Entity.Producto;
 
 namespace bondAPPetite.View
@@ -178,6 +180,17 @@ namespace bondAPPetite.View
 
         private void comboCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            MemoryStream ms = new MemoryStream();
+            pbImagen.Image.Save(ms, ImageFormat.Jpeg);
+            byte[] abytes= ms.ToArray();
+
+            
+
 
         }
     }
