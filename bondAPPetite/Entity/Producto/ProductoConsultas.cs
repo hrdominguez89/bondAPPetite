@@ -23,7 +23,6 @@ namespace bondAPPetite.Entity.Producto
         internal List<Producto> getProductos(string filtro)
         {
             string q = "SELECT * FROM Productos";
-            SqlDataReader mReader = null;
             try
             {
                 
