@@ -16,7 +16,7 @@ namespace bondAPPetite.View
         public MenuAdmin(Usuario usuario)
         {
             InitializeComponent();
-            labelName.Text = usuario.nombre;
+            lblmensaje.Text = usuario.nombre;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,6 +32,21 @@ namespace bondAPPetite.View
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigator1_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblmensaje_Click(object sender, EventArgs e)
         {
 
         }

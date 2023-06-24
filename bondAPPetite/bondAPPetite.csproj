@@ -217,5 +217,8 @@
   <ItemGroup>
     <Folder Include="Entity\Usuario\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
