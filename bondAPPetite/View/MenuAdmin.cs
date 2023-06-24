@@ -50,5 +50,12 @@ namespace bondAPPetite.View
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegistroUsuario registrarUsuario = new RegistroUsuario();
+            registrarUsuario.Show();
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using bondAPPetite.DAL;
 using bondAPPetite.Entity.Producto;
 
 namespace bondAPPetite.View
@@ -137,6 +139,17 @@ namespace bondAPPetite.View
             {
                 pbImagen.Image = Image.FromFile(ofdSeleccionar.FileName);
             }
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            MemoryStream ms = new MemoryStream();
+            pbImagen.Image.Save(ms, ImageFormat.Jpeg);
+            byte[] abytes= ms.ToArray();
+
+            
+
 
         }
     }
