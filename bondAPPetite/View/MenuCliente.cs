@@ -88,5 +88,17 @@ namespace bondAPPetite.View
             ProductoCliente productoCliente = new ProductoCliente(this.usuario, 4);
             productoCliente.Show();
         }
+
+        private void lblmensaje_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OrdendePago ordendePago = new OrdendePago(this.usuario);
+            ordendePago.Show();
+        }
     }
 }
