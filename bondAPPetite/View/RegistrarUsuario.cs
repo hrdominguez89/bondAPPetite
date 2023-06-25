@@ -17,10 +17,12 @@ namespace bondAPPetite
     public partial class RegistroUsuario : Form
     {
         private ConnectionDB con = new ConnectionDB();
+        private Usuario usuario;
 
-        public RegistroUsuario()
+        public RegistroUsuario(Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -133,6 +135,13 @@ namespace bondAPPetite
         private void RegistroUsuario_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuAdmin menuAdmin = new MenuAdmin(this.usuario);
+            menuAdmin.Show();
         }
     }
 }

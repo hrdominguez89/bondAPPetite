@@ -41,7 +41,7 @@ namespace bondAPPetite.Entity.Carrito
                         Carrito carrito = new Carrito();
                         carrito.id = int.Parse(dt.Rows[i]["id"].ToString());
                         carrito.producto_id = int.Parse(dt.Rows[i]["producto_id"].ToString());
-                        carrito.producto_nombre = dt.Rows[i]["producto_id"].ToString();
+                        carrito.producto_nombre = dt.Rows[i]["producto_nombre"].ToString();
                         carrito.cantidad = int.Parse(dt.Rows[i]["cantidad"].ToString());
                         carrito.precio = float.Parse(dt.Rows[i]["precio"].ToString());
                         carrito.estado_id = int.Parse(dt.Rows[i]["cantidad"].ToString());

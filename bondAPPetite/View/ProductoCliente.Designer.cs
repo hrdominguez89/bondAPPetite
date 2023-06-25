@@ -296,6 +296,7 @@
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.textId);
             this.Name = "ProductoCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ProductoCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();

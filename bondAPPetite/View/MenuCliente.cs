@@ -21,6 +21,8 @@ namespace bondAPPetite.View
         private CarritoConsulta mCarritoConsulta;
         private Producto mProducto;
 
+        private float totalCarrito;
+
         private Usuario usuario;
 
         public MenuCliente(Usuario usuario)
@@ -42,17 +44,21 @@ namespace bondAPPetite.View
             dgvProductos.Refresh();
             lCarrito.Clear();
             lCarrito = mCarritoConsulta.getCarrito(usuario_id);
-
+            this.totalCarrito = 0;
             for (int i = 0; i < lCarrito.Count; i++)
             {
                 dgvProductos.RowTemplate.Height = 50;
                 dgvProductos.Rows.Add(
                     lCarrito[i].producto_nombre,
                     lCarrito[i].cantidad,
-                    lCarrito[i].precio,
-                    lCarrito[i].precio * lCarrito[i].cantidad
+                    "$ " +lCarrito[i].precio,
+                    "$ " + lCarrito[i].precio * lCarrito[i].cantidad
                 );
+                this.totalCarrito = this.totalCarrito + (lCarrito[i].precio * lCarrito[i].cantidad);
             }
+            labelValorTotal.Text ="$ " + this.totalCarrito.ToString();
+
+
         }
 
 
@@ -87,6 +93,18 @@ namespace bondAPPetite.View
             this.Hide();
             ProductoCliente productoCliente = new ProductoCliente(this.usuario, 4);
             productoCliente.Show();
+        }
+
+        private void buttonCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+        }
+
+        private void MenuCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

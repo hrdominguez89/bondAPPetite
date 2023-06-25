@@ -55,6 +55,7 @@ namespace bondAPPetite.View
             this.textId = new System.Windows.Forms.TextBox();
             this.buttonLimpiar = new System.Windows.Forms.Button();
             this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.buttonVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
@@ -291,7 +292,7 @@ namespace bondAPPetite.View
             this.buttonLimpiar.BackColor = System.Drawing.Color.MediumPurple;
             this.buttonLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLimpiar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonLimpiar.Location = new System.Drawing.Point(388, 550);
+            this.buttonLimpiar.Location = new System.Drawing.Point(251, 550);
             this.buttonLimpiar.Name = "buttonLimpiar";
             this.buttonLimpiar.Size = new System.Drawing.Size(92, 28);
             this.buttonLimpiar.TabIndex = 31;
@@ -310,12 +311,26 @@ namespace bondAPPetite.View
             this.pbImagen.TabStop = false;
             this.pbImagen.Click += new System.EventHandler(this.pbImagen_Click);
             // 
+            // buttonVolver
+            // 
+            this.buttonVolver.BackColor = System.Drawing.Color.MediumPurple;
+            this.buttonVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonVolver.Location = new System.Drawing.Point(477, 550);
+            this.buttonVolver.Name = "buttonVolver";
+            this.buttonVolver.Size = new System.Drawing.Size(92, 28);
+            this.buttonVolver.TabIndex = 32;
+            this.buttonVolver.Text = "Volver";
+            this.buttonVolver.UseVisualStyleBackColor = false;
+            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
+            // 
             // ProductosAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(593, 590);
+            this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.labelBuscar);
@@ -335,6 +350,7 @@ namespace bondAPPetite.View
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.textId);
             this.Name = "ProductosAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ProductosAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
@@ -371,5 +387,6 @@ namespace bondAPPetite.View
         private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.TextBox textId;
         private System.Windows.Forms.Button buttonLimpiar;
+        private System.Windows.Forms.Button buttonVolver;
     }
 }

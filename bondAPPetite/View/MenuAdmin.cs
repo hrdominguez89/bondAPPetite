@@ -13,16 +13,20 @@ namespace bondAPPetite.View
 {
     public partial class MenuAdmin : Form
     {
+
+        private Usuario usuario;
+
         public MenuAdmin(Usuario usuario)
         {
             InitializeComponent();
             lblmensaje.Text = usuario.nombre;
+            this.usuario = usuario;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ProductosAdmin productosAdmin = new ProductosAdmin();
+            ProductosAdmin productosAdmin = new ProductosAdmin(this.usuario);
             productosAdmin.Show();
         }
 
@@ -54,8 +58,15 @@ namespace bondAPPetite.View
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RegistroUsuario registrarUsuario = new RegistroUsuario();
+            RegistroUsuario registrarUsuario = new RegistroUsuario(this.usuario);
             registrarUsuario.Show();
+        }
+
+        private void buttonCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+                login.Show();
         }
     }
 }

@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using bondAPPetite.Entity.Categoria;
 using bondAPPetite.DAL;
 using bondAPPetite.Entity.Producto;
+using bondAPPetite.Entity;
 
 namespace bondAPPetite.View
 {
@@ -22,10 +23,12 @@ namespace bondAPPetite.View
         private List<Producto> mProductos;
         private ProductoConsultas mProductoConsultas;
         private Producto mProducto;
+        private Usuario usuario;
 
-        public ProductosAdmin()
+        public ProductosAdmin(Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
             mProductos = new List<Producto>();
             mProductoConsultas = new ProductoConsultas();
             listarCategorias();
@@ -297,6 +300,13 @@ namespace bondAPPetite.View
         private void pbImagen_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuAdmin menuAdmin = new MenuAdmin(usuario);
+            menuAdmin.Show();
         }
     }
 }
