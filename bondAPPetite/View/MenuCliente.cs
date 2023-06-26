@@ -117,5 +117,10 @@ namespace bondAPPetite.View
             OrdendePago ordendePago = new OrdendePago(this.usuario);
             ordendePago.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

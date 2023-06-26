@@ -117,7 +117,7 @@
             this.lblmensaje.AutoSize = true;
             this.lblmensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblmensaje.ForeColor = System.Drawing.Color.White;
-            this.lblmensaje.Location = new System.Drawing.Point(3, 348);
+            this.lblmensaje.Location = new System.Drawing.Point(80, 152);
             this.lblmensaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblmensaje.Name = "lblmensaje";
             this.lblmensaje.Size = new System.Drawing.Size(60, 13);
@@ -245,7 +245,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 306);
+            this.label1.Location = new System.Drawing.Point(36, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 31);
             this.label1.TabIndex = 0;
@@ -355,7 +355,7 @@
             this.buttonCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonCerrarSesion.Location = new System.Drawing.Point(970, 27);
-            this.buttonCerrarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCerrarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCerrarSesion.Name = "buttonCerrarSesion";
             this.buttonCerrarSesion.Size = new System.Drawing.Size(122, 27);
             this.buttonCerrarSesion.TabIndex = 34;

@@ -1,4 +1,5 @@
 ﻿using bondAPPetite.Entity;
+using bondAPPetite.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,6 +45,13 @@ namespace bondAPPetite
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuCliente menuCliente = new MenuCliente(this.usuario);
+            menuCliente.Show();
         }
     }
 }
