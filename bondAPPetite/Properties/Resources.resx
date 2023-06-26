@@ -124,9 +124,6 @@
   <data name="cafe con leche" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cafe con leche.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="coca" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coca.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="cafe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cafe.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,11 +151,14 @@
   <data name="pizza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pizza.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="lemon pie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemon pie.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imperial negra" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imperial negra.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lemon pie" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lemon pie.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="coca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coca.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="flan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flan.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -171,6 +171,9 @@
   </data>
   <data name="capucchino" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\capucchino.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tostados" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tostados.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,7 +208,7 @@
   <data name="sandwick de mila con fritas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sandwick de mila con fritas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hamburguesa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hamburguesa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
