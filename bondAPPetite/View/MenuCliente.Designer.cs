@@ -47,7 +47,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
@@ -71,9 +70,10 @@
             // 
             this.button3.BackColor = System.Drawing.Color.MediumPurple;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button3.Location = new System.Drawing.Point(316, 12);
+            this.button3.Location = new System.Drawing.Point(421, 15);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 42);
+            this.button3.Size = new System.Drawing.Size(240, 52);
             this.button3.TabIndex = 12;
             this.button3.Text = "CAFETERIA";
             this.button3.UseVisualStyleBackColor = false;
@@ -83,9 +83,10 @@
             // 
             this.button2.BackColor = System.Drawing.Color.MediumPurple;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button2.Location = new System.Drawing.Point(502, 60);
+            this.button2.Location = new System.Drawing.Point(669, 74);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 42);
+            this.button2.Size = new System.Drawing.Size(240, 52);
             this.button2.TabIndex = 11;
             this.button2.Text = "POSTRES";
             this.button2.UseVisualStyleBackColor = false;
@@ -95,9 +96,10 @@
             // 
             this.button5.BackColor = System.Drawing.Color.MediumPurple;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button5.Location = new System.Drawing.Point(502, 12);
+            this.button5.Location = new System.Drawing.Point(669, 15);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(180, 42);
+            this.button5.Size = new System.Drawing.Size(240, 52);
             this.button5.TabIndex = 10;
             this.button5.Text = "BEBIDAS";
             this.button5.UseVisualStyleBackColor = false;
@@ -110,9 +112,10 @@
             this.panel1.Controls.Add(this.bindingNavigator1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(16, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(264, 606);
+            this.panel1.Size = new System.Drawing.Size(352, 755);
             this.panel1.TabIndex = 9;
             // 
             // lblmensaje
@@ -120,12 +123,12 @@
             this.lblmensaje.AutoSize = true;
             this.lblmensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblmensaje.ForeColor = System.Drawing.Color.White;
-            this.lblmensaje.Location = new System.Drawing.Point(3, 348);
-            this.lblmensaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblmensaje.Location = new System.Drawing.Point(4, 428);
             this.lblmensaje.Name = "lblmensaje";
-            this.lblmensaje.Size = new System.Drawing.Size(60, 13);
+            this.lblmensaje.Size = new System.Drawing.Size(78, 17);
             this.lblmensaje.TabIndex = 3;
             this.lblmensaje.Text = "Bienvenido";
+            this.lblmensaje.Click += new System.EventHandler(this.lblmensaje_Click);
             // 
             // bindingNavigator1
             // 
@@ -152,7 +155,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(264, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(352, 31);
             this.bindingNavigator1.TabIndex = 2;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -168,7 +171,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 28);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
@@ -202,7 +205,7 @@
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -210,14 +213,14 @@
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(49, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -240,7 +243,7 @@
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // pictureBox1
             // 
@@ -257,9 +260,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 306);
+            this.label1.Location = new System.Drawing.Point(0, 377);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 31);
+            this.label1.Size = new System.Drawing.Size(231, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bond Appetite";
             // 
@@ -267,9 +271,10 @@
             // 
             this.button1.BackColor = System.Drawing.Color.MediumPurple;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button1.Location = new System.Drawing.Point(316, 60);
+            this.button1.Location = new System.Drawing.Point(421, 74);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 42);
+            this.button1.Size = new System.Drawing.Size(240, 52);
             this.button1.TabIndex = 8;
             this.button1.Text = "MINUTAS";
             this.button1.UseVisualStyleBackColor = false;
@@ -283,38 +288,49 @@
             this.cantidad,
             this.precio_unidad,
             this.precio_total});
-            this.dgvProductos.Location = new System.Drawing.Point(293, 199);
+            this.dgvProductos.Location = new System.Drawing.Point(391, 245);
+            this.dgvProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(444, 347);
+            this.dgvProductos.RowHeadersWidth = 51;
+            this.dgvProductos.Size = new System.Drawing.Size(592, 427);
             this.dgvProductos.TabIndex = 13;
             // 
             // nombre
             // 
             this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
             this.nombre.Name = "nombre";
+            this.nombre.Width = 125;
             // 
             // cantidad
             // 
             this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.MinimumWidth = 6;
             this.cantidad.Name = "cantidad";
+            this.cantidad.Width = 125;
             // 
             // precio_unidad
             // 
             this.precio_unidad.HeaderText = "Precio x unidad";
+            this.precio_unidad.MinimumWidth = 6;
             this.precio_unidad.Name = "precio_unidad";
+            this.precio_unidad.Width = 125;
             // 
             // precio_total
             // 
             this.precio_total.HeaderText = "Total";
+            this.precio_total.MinimumWidth = 6;
             this.precio_total.Name = "precio_total";
+            this.precio_total.Width = 125;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(288, 148);
+            this.label2.Location = new System.Drawing.Point(384, 182);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 25);
+            this.label2.Size = new System.Drawing.Size(131, 31);
             this.label2.TabIndex = 14;
             this.label2.Text = "Mi Carrito";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -323,20 +339,23 @@
             // 
             this.button4.BackColor = System.Drawing.Color.MediumPurple;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(780, 457);
+            this.button4.Location = new System.Drawing.Point(1040, 562);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(210, 42);
+            this.button4.Size = new System.Drawing.Size(280, 52);
             this.button4.TabIndex = 15;
             this.button4.Text = "Proceder al pago";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(806, 253);
+            this.label3.Location = new System.Drawing.Point(1075, 311);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 25);
+            this.label3.Size = new System.Drawing.Size(173, 31);
             this.label3.TabIndex = 16;
             this.label3.Text = "Total a pagar";
             // 
@@ -365,7 +384,7 @@
             // 
             // MenuCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 558);
             this.Controls.Add(this.buttonCerrarSesion);
@@ -379,6 +398,7 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MenuCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

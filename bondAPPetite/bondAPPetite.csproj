@@ -60,6 +60,12 @@
     <Compile Include="Entity\Producto\Producto.cs" />
     <Compile Include="Entity\Usuario.cs" />
     <Compile Include="Entity\Roles.cs" />
+    <Compile Include="View\OrdendePago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OrdendePago.Designer.cs">
+      <DependentUpon>OrdendePago.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\OrdendePago.resx">
+      <DependentUpon>OrdendePago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ProductoCliente.resx">
       <DependentUpon>ProductoCliente.cs</DependentUpon>
     </EmbeddedResource>
