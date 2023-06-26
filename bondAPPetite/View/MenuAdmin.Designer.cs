@@ -32,14 +32,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            //this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblmensaje = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonCerrarSesion = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -77,7 +77,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumPurple;
-            this.panel1.Controls.Add(this.pictureBox1);
+            //this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblmensaje);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(2, -78);
@@ -87,14 +87,14 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::bondAPPetite.Properties.Resources.images;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 88);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 249);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            //this.pictureBox1.Image = global::bondAPPetite.Properties.Resources.images;
+            //this.pictureBox1.Location = new System.Drawing.Point(8, 88);
+            //this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            //this.pictureBox1.Name = "pictureBox1";
+            //this.pictureBox1.Size = new System.Drawing.Size(240, 249);
+            //this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            //this.pictureBox1.TabIndex = 4;
+            //this.pictureBox1.TabStop = false;
             // 
             // lblmensaje
             // 

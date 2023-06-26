@@ -14,7 +14,6 @@ namespace bondAPPetite.Entity.Carrito
     internal class CarritoConsulta
     {
         private ConnectionDB connectionDB;
-        private Carrito carrito;
         private List<Carrito> lCarrito = new List<Carrito>();
 
         public CarritoConsulta()

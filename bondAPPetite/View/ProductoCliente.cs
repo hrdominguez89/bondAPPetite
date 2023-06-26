@@ -26,7 +26,7 @@ namespace bondAPPetite.View
         private Carrito mCarrito;
 
 
-        private Producto mProducto;
+        //private Producto mProducto;
         private Categoria mCategoria;
 
         private Usuario usuario;

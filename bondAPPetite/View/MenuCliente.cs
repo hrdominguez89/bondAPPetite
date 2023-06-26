@@ -19,7 +19,6 @@ namespace bondAPPetite.View
 
         private List<Carrito> lCarrito;
         private CarritoConsulta mCarritoConsulta;
-        private Producto mProducto;
 
         private float totalCarrito;
 
